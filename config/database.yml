@@ -9,7 +9,7 @@ development:
   database: happyshop
   pool: 5
   username: postgres
-  password: vu6RefrA
+  password: 
 
 test:
   adapter: postgresql
@@ -17,12 +17,13 @@ test:
   database: happyshop
   pool: 5
   username: postgres
-  password: vu6RefrA
+  password: 
 
 production:
+  host: 127.0.0.1
   adapter: postgresql
   encoding: unicode
-  database: happyshop
+  database: <%= ENV['DB_NAME'] %>
   pool: 5
-  username: postgres
-  password: vu6RefrA
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
